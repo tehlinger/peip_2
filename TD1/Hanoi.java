@@ -2,7 +2,7 @@
 class Hanoi {
 	static void déplacer(int n, char a, char b) {
 		System.out.println(
-				"déplacez le disque " + n + " du socle " + a + " vers le socle " + b
+	"déplacez le disque " + n + " du socle " + a + " vers le socle " + b
 				);
 	}
 
@@ -12,10 +12,12 @@ class Hanoi {
 	*/
 	static void hanoi(int n, char a, char b, char c) {
 		if (n > 0) {
-		//A REMPLIR
+			hanoi(n-1,a,c,b);
+			déplacer(n,a,b);
+			hanoi(n-1,c,b,a);
 		}
 	}
 	public static void main(String [] arg) {
-		hanoi(4,'a', 'b', 'c');
+		hanoi(64,'a', 'b', 'c');
 	}
 }
