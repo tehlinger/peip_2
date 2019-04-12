@@ -21,3 +21,13 @@
                 }
             }
 
+    public void insertOne(int index,Element <C,V> e){
+	if (index <= l.size()){
+	l.add(e);
+	int i = 0;
+	for (i = l.size()-1; i > index ; i--){
+		l.set(i,l.get(i-1));
+	}
+ 	l.set(i,e);
+	}
+    }	
