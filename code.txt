@@ -1,0 +1,23 @@
+   public void  triInsertSeq() {
+        Element<C,V> tmp= null;
+        for (int i=1; i<l.size(); i++) {
+                boolean matchFound = false;
+                Element<C,V> cand = l.get(i);
+                Element<C,V> before= cand;
+                for (int j=0; j<i; j++){
+                        if (!matchFound){
+                                //If i < j
+                                if (cand.cle().compareTo(l.get(j).cle()) < 0){ 
+                        matchFound=true;
+                        before = l.get(j);
+                        l.set(j,cand);}
+                        }else{
+                                tmp = l.get(j);
+                                l.set(j,before);
+                                before = tmp;
+                                }
+                        }
+                l.set(i,before);
+                }
+            }
+
